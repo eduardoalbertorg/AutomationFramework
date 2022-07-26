@@ -1,0 +1,24 @@
+{
+  "name": "automationframework",
+  "version": "1.0.0",
+  "description": "automation framework to handle todoist.com website",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:login": "npx playwright test Login.spec.ts",
+    "test:task": "npx playwright test Task.spec.ts",
+    "test:smoke": "npx playwright test --grep @smoke",
+    "test:integration": "npx playwright test --grep @integration",
+    "show-report": "npx playwright show-report"
+  },
+  "keywords": [],
+  "author": "eduardo.rodriguez@wizeline.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.23.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "eslint": "^8.19.0"
+  }
+}
