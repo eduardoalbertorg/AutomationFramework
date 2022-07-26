@@ -44,7 +44,7 @@ const config: PlaywrightTestConfig = {
         log: (name, severity, message, args) => console.log(`${name} ${message}`),
       }
     },
-    headless: false,
+    headless: true,
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
