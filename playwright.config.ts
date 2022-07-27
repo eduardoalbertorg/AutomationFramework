@@ -15,9 +15,10 @@ dotenv.config();
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-  testDir: './tests',
+  testMatch: /.*spec\.ts/,
+  //testDir: '././page-objects/specs',
   /* Maximum time one test can run for. */
-  timeout: 36 * 100000,
+  timeout: 5 * 60 * 1000,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
