@@ -9,20 +9,20 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v1.3
+      with:
+        envkey_VALID_USERNAME: ${{ secrets.VALID_USERNAME }}
+        envkey_VALID_PASSWORD: ${{ secrets.SECRET_KEY }}
+        envkey_INVALID_USERNAME: ${{ secrets.INVALID_USERNAME }}
+        envkey_INVALID_PASSWORD: ${{ secrets.INVALID_PASSWORD }}
+        envkey_EMPTY_USERNAME: ${{ secrets.EMPTY_USERNAME }}
+        envkey_EMPTY_PASSWORD: ${{ secrets.EMPTY_PASSWORD }}
+        file_name: .env
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
       with:
         node-version: '14.x'
-    - name: Create env file
-      run: |
-          touch .env
-          echo VALID_USERNAME=${{ secrets.VALID_USERNAME }} >> .env
-          echo VALID_PASSWORD=${{ secrets.VALID_PASSWORD }} >> .env
-          echo INVALID_USERNAME=${{ secrets.INVALID_USERNAME }} >> .env
-          echo INVALID_PASSWORD=${{ secrets.INVALID_PASSWORD }} >> .env
-          echo EMPTY_USERNAME=${{ secrets.EMPTY_USERNAME }} >> .env
-          echo EMPTY_PASSWORD=${{ secrets.EMPTY_PASSWORD }} >> .env
-          cat .env
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
