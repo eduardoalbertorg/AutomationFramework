@@ -30,6 +30,7 @@ export class HomePage extends MenuPage {
     }
 
     async clickAddTaskModalButton(): Promise<void> {
+        console.log('# Clicking on the "Add Task" button.')
         await this.addTaskModalButton.click()
     }
 
@@ -38,14 +39,17 @@ export class HomePage extends MenuPage {
     }
 
     async clickQuickAddTaskButton(): Promise<void> {
+        console.log('# Clicking on the quick add task button.')
         await this.quickAddTaskButton.click()
     }
 
     async enterTaskname(taskname: string): Promise<void> {
+        console.log(`# Entering task title as "${taskname}".`)
         await this.taskTitleTextfield.fill(taskname)
     }
 
     async enterDescription(description: string): Promise<void> {
+        console.log('# Entering task description as "${description}".')
         await this.descriptionTextfield.fill(description)
     }
 

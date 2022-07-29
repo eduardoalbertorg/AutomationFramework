@@ -39,14 +39,17 @@ export class LoginPage {
     }
 
     async enterEmail(email: string) {
+        console.log(`# Entering the email field."`)
         await this.emailTextbox.fill(email)
     }
 
     async enterPassword(password: string) {
+        console.log(`# Entering the password field."`)
         await this.passwordTextbox.fill(password)
     }
 
     async clickLoginButton() {
+        console.log('# Clicking on the log in button.')
         await this.loginButton.click()
     }
 
