@@ -1,9 +1,5 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 import { devices } from '@playwright/test';
-import dotenv from 'dotenv';
-
-// Read from default ".env" file.
-dotenv.config();
 
 /**
  * Read environment variables from file.
