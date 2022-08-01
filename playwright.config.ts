@@ -1,9 +1,5 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 import { devices } from '@playwright/test';
-import dotenv from 'dotenv';
-
-// Read from default ".env" file.
-dotenv.config();
 
 /**
  * Read environment variables from file.
@@ -15,9 +11,10 @@ dotenv.config();
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-  testDir: './tests',
+  testMatch: /.*spec\.ts/,
+  //testDir: '././page-objects/specs',
   /* Maximum time one test can run for. */
-  timeout: 36 * 100000,
+  timeout: 72 * 100000,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
